@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery: Where Bears Steal the Show!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bigelow+Gothic&family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Make sure this path is correct -->
+  
+</head>
+
+<body>
+
+  <header class="bear-banner">
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#artists">Artists</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="background-overlay">
+      <h1>Grizzly Bear Art Gallery: Rawr means "Art" in Bear!</h1>
+      <p class="tagline">Get clawed by creativity. Every brushstroke roars!</p>
+    </div>
+  </header>
+  
+
+  <main>
+
+    <section class="intro">
+      <h2>Get ready to be beary impressed!</h2>
+      <p>Welcome to a wilder side of art, where the fur flies and talent takes center stage! We celebrate the grizzly bear in all its magnificent forms, through paws-itive strokes and roarsome imaginations.</p>
+    </section>
+
+    <section class="gallery">
+
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='images/Robert_de_bear.png') }}" alt="Grizzly Bear 1"> <!-- Make sure this path is correct -->
+        <p>Robert De Niro who?<br>DaBears</br></p>
+      </div>
+
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='images/NotDrunkBear.png') }}" alt="Grizzly Bear 2"> 
+        <p>This bear had a bit too much honey too drink.</p>
+      </div>
+
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='images/BigBear.webp') }}" alt="Grizzly Bear 3"> 
+        <p>This bear is in shock, he just met Larry David... Who told him to piss off... Ouch!</p>
+      </div>
+
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='images/NoHumans.webp') }}" alt="Grizzly Bear 4"> 
+        <p>Life is like a box of chocolates... You never know what your going to get!</p>
+      </div>
+      
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='images/Party_bear.webp') }}" alt="Grizzly Bear 4"> 
+        <p>Nature's canvas, bear-naked beauty. Call that fur-Free festivity.</p>
+      </div>
+      
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='images/bear___party.webp') }}" alt="Grizzly Bear 4"> <!-- Make sure this path is correct -->
+        <p>Its honey time!</p>
+      </div>
+
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='images/partyBEAR.webp') }}" alt="Grizzly Bear 4"> <!-- Make sure this path is correct -->
+        
+        <p>Life is like a box of chocolates... You never know what your going to get!</p>
+      </div>
+
+    </section>
+
+    <section class="call-to-action">
+      <h2>Unleash your inner bear!</h2>
+      <a href="/fileupload" class="cta-button">Submit your Grizzly-inspired art here!</a>
+      <p>Join the paw-ty and showcase your talent!</p>
+    </section>
+
+  </main>
+
+  <footer class="bear-cave">
+    <p>Copyright 2024 Grizzly Bear Art Gallery: Where the wild things are...</p>
+  </footer>
+
+</body>
+</html>

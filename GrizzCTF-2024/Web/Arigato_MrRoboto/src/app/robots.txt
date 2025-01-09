@@ -1,0 +1,2 @@
+User-Allow: *
+Disallow: /arigato/

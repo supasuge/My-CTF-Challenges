@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Will Tell API Docs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://wallpapercave.com/wp/Lduhz8O.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 90%;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .endpoint {
+            margin-bottom: 40px;
+        }
+        .method {
+            font-weight: bold;
+            color: #2980b9;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .description {
+            margin-top: 10px;
+            color: #7f8c8d;
+            text-align: center;
+        }
+        .params, .headers {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        .params ul, .headers ul {
+            list-style-type: disc;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #34495e;
+            font-size: 0.95em;
+        }
+        code {
+            background-color: #bdc3c7;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            pre {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Time Will Tell API Docs</h1>
+
+        <div class="endpoint">
+            <h2>1. Execute a Command</h2>
+            <p class="method">POST /cmd</p>
+            <p class="description">Execute a specific command from the list of allowed commands.</p>
+            
+            <h3>Headers:</h3>
+            <div class="headers">
+                <ul>
+                    <li><strong>Content-Type</strong>: Must be <code>application/json</code></li>
+                </ul>
+            </div>
+            
+            <h3>Request Body:</h3>
+            <pre>{
+    "cmd": "command_name"
+}</pre>
+            
+            <h3>Available Commands:</h3>
+            <ul>
+                <li><strong>get_time.12</strong>: Get current time in 12-hour format with AM/PM.</li>
+                <li><strong>get_time.24</strong>: Get current time in 24-hour format.</li>
+                <li><strong>get_date</strong>: Get current date.</li>
+                <li><strong>get_time_date</strong>: Get current date and time in 12-hour format.</li>
+                <li><strong>get_help</strong>: Get a list of available commands.</li>
+                <li><strong>helpful_hint</strong>: Receive a helpful hint.</li>
+            </ul>
+            
+            <h3>Example Request:</h3>
+            <pre>curl -X POST http://localhost:8000/cmd \
+    -H "Content-Type: application/json" \
+    -d '{"cmd": "get_time.12"}'</pre>
+            
+            <h3>Example Response:</h3>
+            <pre>{
+    "current_time_12hr": "03:45:12 PM"
+}</pre>
+        </div>
+
+        <div class="endpoint">
+            <h2>2. Get Available Commands</h2>
+            <p class="method">GET /get-options</p>
+            <p class="description">Retrieve a list of all available commands.</p>
+            
+            <h3>Headers:</h3>
+            <div class="headers">
+                <ul>
+                    <li><strong>Content-Type</strong>: Must be <code>application/json</code></li>
+                </ul>
+            </div>
+            
+            <h3>Example Request:</h3>
+            <pre>curl -X GET http://localhost:8000/get-options \
+    -H "Content-Type: application/json"</pre>
+            
+            <h3>Example Response:</h3>
+            <pre>{
+    "allowed_commands": [
+        "get_time.12",
+        "get_time.24",
+        "get_date",
+        "get_time_date",
+        "get_help",
+        "helpful_hint"
+    ]
+}</pre>
+        </div>
+    </div>
+</body>
+</html>

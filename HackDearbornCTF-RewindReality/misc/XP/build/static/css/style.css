@@ -1,0 +1,33 @@
+body {
+    background-image: url('https://getwallpapers.com/wallpaper/full/8/9/2/727078-cool-windows-xp-desktop-backgrounds-1920x1080.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.window-body {
+    background-color: black;
+    color: rgb(229, 236, 229);
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    height: 400px;
+    overflow-y: auto;
+    font-size: 1.2em; /* Adjusted font size */
+}
+
+#terminal {
+    line-height: 1.2em;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: rgb(226, 232, 226);
+    }
+}

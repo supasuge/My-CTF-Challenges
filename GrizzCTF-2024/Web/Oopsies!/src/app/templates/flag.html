@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oopsies</title>
+    <style>
+        body {
+            background: black;
+            background-image: radial-gradient(white 1px, transparent 1px), radial-gradient(white 1px, black 1px);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            animation: move 3s linear infinite;
+        }
+          
+        @keyframes move {
+            to {
+              background-position: 60px 60px, 90px 90px;  
+            }
+        }
+          
+        .container {
+            position: relative;
+            z-index: 1;  
+        }
+        h1 {
+            color: white;
+            border: 2px solid #39ff14;
+            padding: 20px;
+            border-radius: 15px;
+            animation: neon 1.5s ease-in-out infinite alternate;
+        }
+        h2 {
+            color: white;
+            margin-top: 20px;
+            border: 1px solid #39ff14;
+            padding: 20px;
+            border-radius: 15px;
+            animation: neon 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes neon {
+            from {
+                box-shadow: 0 0 10px #39ff14, 0 0 15px #39ff14, 0 0 20px #39ff14, 0 0 35px #39ff14, 0 0 40px #39ff14, 0 0 45px #39ff14, 0 0 50px #39ff14, 0 0 55px #39ff14;
+            }
+            to {
+                box-shadow: 0 0 20px #39ff14, 0 0 25px #39ff14, 0 0 30px #39ff14, 0 0 35px #39ff14, 0 0 45px #39ff14, 0 0 50px #39ff14, 0 0 55px #39ff14, 0 0 60px #39ff14;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Good Job!</h1>
+        <h2>Always be sure to double check for possible accidental sensitive information disclosures! <br> <br> Flag: {{ flag }}</h2>
+    </div>
+</body>
+</html>

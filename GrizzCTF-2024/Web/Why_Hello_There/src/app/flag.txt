@@ -1,0 +1,3 @@
+GrizzCTF{ssti_frss_4ll}
+
+

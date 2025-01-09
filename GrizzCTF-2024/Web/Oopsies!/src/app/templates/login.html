@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0a0a0a;
+            color: #39ff14;
+        }
+        .navbar {
+            background-color: #272525;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #39ff14;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .centered-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100% - 60px);
+        }
+        .login-form {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px 5px #ff0099;
+            width: 300px; 
+            animation: formAppear 0.5s ease-in-out;
+        }
+        @keyframes formAppear {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .login-form h1 {
+            color: #ff0099;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 20px); 
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box; 
+        }
+        button {
+            width: calc(100% - 20px); 
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #7af120;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; 
+            box-sizing: border-box; 
+        }
+        button:hover {
+            background-color: #ff33aa;
+            transform: scale(1.05); 
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+    </div>
+    <!-- hidden_-->
+    <div class="centered-container">
+        <div class="login-form">
+            <form action="/login" method="post">
+                <h1>Login</h1>
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <!--in_plain-->
+        </div>
+    </div>
+</body>
+<!--_sight -->
+</html>

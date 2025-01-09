@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="psone-subtitle">Blog Posts</h2>
+<ul class="psone-list">
+    {% for post in posts %}
+    <li class="psone-list-item"><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

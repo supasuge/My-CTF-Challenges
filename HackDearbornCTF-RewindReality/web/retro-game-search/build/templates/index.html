@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Game Search</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-image: url('https://wallpapercave.com/wp/wp6004876.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px #00ff00;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        form {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        input[type="text"], select, button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #000;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            outline: none;
+        }
+        input[type="text"] {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        select {
+            margin-right: 10px;
+        }
+        button {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #00ff00;
+            color: #000;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #00ff00;
+        }
+        th {
+            background-color: rgba(0, 255, 0, 0.2);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        tr:hover {
+            background-color: rgba(0, 255, 0, 0.1);
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px #00ff00; }
+            50% { box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; }
+            100% { box-shadow: 0 0 5px #00ff00; }
+        }
+        .container {
+            animation: glow 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Retro Game Search</h1>
+        <form method="POST">
+            <input type="text" name="search" placeholder="Search for a game..." value="{{ request.form['search'] if request.form['search'] else '' }}">
+            <select name="order">
+                <option value="rank">Rank</option>
+                <option value="release_date">Release Date</option>
+                <option value="title">Title</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Release Date</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for game in games %}
+                <tr>
+                    <td>{{ game.rank }}</td>
+                    <td>{{ game.release_date }}</td>
+                    <td>{{ game.title }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

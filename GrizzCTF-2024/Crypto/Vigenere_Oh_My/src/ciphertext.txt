@@ -1,0 +1,15 @@
+Ciphertext: 
+
+GSKZAETGQUPWOVHLBIRJIHUJESGGSKZANYCGASUIMQVFIRJBZMABFCRTIRJBZMABFCRTCNEETGOALGSNGHBRPZ
+
+Known plaintext:
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxGRIZZLYBEARSILOVEGRIZZLYBEARSGRIZZLYBEARSANDCTFMAKESMEHAPPY
+
+Key: [REDACTED]
+
+HINT: please note that '{' and '}' have been removed from the flag.
+The flag format is all capital letters and begins with GRIZZCTF..............
+
+
+

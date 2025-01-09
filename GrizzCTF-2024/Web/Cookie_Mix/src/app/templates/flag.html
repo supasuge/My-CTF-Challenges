@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Congratulations!</h1>
+        <p>You've found the special cookie: <strong>{{ value }}</strong></p>
+        <a href="/reset">Try again</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+/* General Body Styling */
+body {
+    font-family: "Bigelow Gothic", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("images/forest.webp");
+    background-size: cover;
+    background-position: center;
+    color: #f5f5f5; /* Light color for better readability */
+    overflow-x: hidden;
+    padding-bottom: 60px; /* Space for fixed footer */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: rgba(45, 48, 48, 0.9); /* Semi-transparent background */
+    text-align: center;
+    padding: 1em 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #f5f5f5; /* Light color for better readability */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #decba4;
+}
+
+
+.bear-banner {
+    background: linear-gradient(120deg, #51473e, #decba4);
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.background-overlay {
+    padding: 1em; /* Uniform padding */
+}
+
+.background-overlay h1 {
+    font-size: 2.5em; /* Increased font size for better visibility */
+}
+
+.background-overlay .tagline {
+    font-size: 1.2em; /* Increased font size for better visibility */
+}
+
+/* Gallery Styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Larger min-width for better spacing */
+    gap: 20px;
+    padding: 2em;
+    justify-content: center; /* Center grid items */
+}
+
+.image-container {
+    border: 3px solid #decba4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease-in-out;
+    position: relative; /* For absolute positioning of captions */
+}
+
+.image-container:hover {
+    transform: scale(1.05);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto; /* Change to auto to maintain aspect ratio */
+    display: block;
+    object-fit: cover;
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: block; /* Change to block for easy centering */
+    padding: 10px 20px;
+    margin: 20px auto; /* Auto margins for horizontal centering */
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1.2em;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.cta-button:hover {
+    background-color: #e55347;
+    cursor: pointer;
+}
+
+/* Footer */
+.bear-cave {
+    background-color: #3e5151;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    border-top: 3px solid #decba4;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for smaller screens */
+    }
+
+    .background-overlay h1 {
+        font-size: 1.5em; /* Adjust for smaller screens */
+    }
+
+    .background-overlay .tagline {
+        font-size: 0.9em; /* Adjust for smaller screens */
+    }
+}
+
+/* Subtle Animations for Hover Effects */
+.image-container:hover .gallery-caption {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    color: #4a4b4e; /* Dark color for contrast */
+}
+
+.intro h2, .call-to-action h2 {
+    color: #08eaea;
+    margin: 1em 0;
+}
+
+.intro p, .gallery p, .call-to-action p, .bear-cave p {
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.gallery p {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.5em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 1em);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    border-radius: 0 0 10px 10px;
+    color: #333; /* Dark color for readability */
+}
+
+.image-container:hover p {
+    transform: translateY(0);
+}
+
+/* Add a fun hover effect to links */
+a {
+    color: #ff6347;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e55347;
+    text-decoration: underline;
+}

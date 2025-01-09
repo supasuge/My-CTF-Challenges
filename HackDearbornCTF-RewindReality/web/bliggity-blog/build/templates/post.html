@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="psone-subtitle">{{ post.title }}</h2>
+<p class="psone-text">{{ post.content }}</p>
+<hr>
+<h3 class="psone-subtitle">Comments</h3>
+<ul class="psone-list">
+    {% for comment in comments %}
+    <li class="psone-list-item">{{ comment|safe }}</li>
+    {% endfor %}
+</ul>
+<form action="{{ url_for('comment', post_id=post.id) }}" method="post">
+    <textarea name="content" rows="6" cols="45" class="psone-input" placeholder="Enter your comment"></textarea><br>
+    <button type="submit" class="psone-btn">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        // Check for the existence of "attempts" in localStorage and initialize if not present
+        if (!localStorage.getItem('attempts')) {
+            localStorage.setItem('attempts', 0);
+        }
+
+        function incrementCounter() {
+            let attempts = parseInt(localStorage.getItem('attempts'), 10);
+            attempts++;
+            localStorage.setItem('attempts', attempts);
+
+            if (attempts >= 10) {
+                // Show the hint after 10 incorrect attempts
+                alert('It seems you\'re stuck. Here\'s a hint: [https://github.com/noraj/flask-session-cookie-manager]');
+                // Optionally reset the counter after showing the hint
+                localStorage.setItem('attempts', 0);
+            }
+        }
+
+        // Call incrementCounter function on form submission if the answer is incorrect
+        // Note: You need to integrate a method to check if the submission is incorrect
+        // This could be done server-side, and the server can trigger this function accordingly
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Cookie Mix</h1>
+        <form action="/search" method="post" onsubmit="incrementCounter()">
+            <input type="text" name="name" placeholder="Enter a cookie name...">
+            <button type="submit">Search</button>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

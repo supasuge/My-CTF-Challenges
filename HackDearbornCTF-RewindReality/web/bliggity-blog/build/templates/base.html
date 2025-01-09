@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bliggity Blog</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/98mprice/PSone.css@master/PSone.min.css">
+</head>
+<style>
+    body {
+        background-image: url('https://wallup.net/wp-content/uploads/2017/11/17/285830-Sony-PlayStation.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .controller {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .controller button {
+        margin-right: 10px;
+        font-size: 16px;
+    }
+</style>
+<body>
+    <div class="psone-screen">
+        <div class="psone-frame">
+            <header>
+                <h1 class="psone-title">Simple Blog</h1>
+            </header>
+            <main class="psone-content">
+                {% block content %}{% endblock %}
+            </main>
+            <footer>
+                <hr>
+                <p class="psone-footer">Retro Blog</p>
+            </footer>
+        </div>
+    </div>
+    <div class="controller">
+        <button onclick="window.history.back();">◀️ Back</button>
+    </div>
+</body>
+</html>
+</body>
+</html>

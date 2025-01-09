@@ -1,0 +1,43 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: gold;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #222;
+    border: 1px solid gold;
+}
+
+input[type="text"], button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid gold;
+}
+
+button {
+    background-color: gold;
+    color: #000;
+    cursor: pointer;
+}
+
+.flash {
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid gold;
+}
+
+.flash.danger {
+    background-color: darkred;
+}
+
+.flash.success {
+    background-color: darkgreen;
+}

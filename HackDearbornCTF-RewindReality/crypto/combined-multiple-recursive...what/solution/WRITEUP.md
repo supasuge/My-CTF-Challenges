@@ -167,9 +167,6 @@ By embedding the target vector $D$ into this extended matrix, we can transform t
 
 For more details on Kannan Embedding, refer to rkm’s [Lattice Survey](https://github.com/rkm0959/rkm0959_presents/blob/main/lattice_survey.pdf).
 
-
-> Note: It's possible some of the math is off in this, I am still learning latex. The paper was pretty complex... To be fair all things considered, a easier challenge likely would've been better suited given the fact people only had 24 hours for both the CTF and making their hackathon projects... Ya live and ya learn
-
 ### Extracting the State with LLL 
 
 By applying LLL to the constructed lattice, we aim to recover the values $x_i$, $y_i$, and $z_i$. After obtaining these, the PRNG state can be reconstructed. Given the recovered state, we generate future outputs to verify that we have obtained the original state of the PRNG and use this to predict the next values and successfully decrypt the ciphertext to retrieve the flag.

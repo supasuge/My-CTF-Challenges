@@ -77,4 +77,5 @@ Matrix Structure: (X=non-zero, O=zero)
 [+] Total time taken: 12.074 seconds
 ```
 
-### Writeup coming soon...
+### Writeup
+[Link](https://github.com/supasuge/My-CTF-Challenges/blob/main/L3akCTF2025/mersenne-mayhem/solution/Mersenne%20Mayhem.pdf)

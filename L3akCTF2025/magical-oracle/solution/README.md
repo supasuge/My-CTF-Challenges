@@ -40,7 +40,7 @@ $$
   \quad(\bmod\,p).
 $$
 
-Because $k$ is large (≈26), the error is *tiny* compared to $p$, and we face a variant of the **Hidden Number Problem** (HNP).
+Because $k$ is large, the error is *tiny* compared to $p$, and we face a variant of the **Hidden Number Problem** (HNP).
 
 ---
 
@@ -105,7 +105,7 @@ $\mathbf y$ is *almost* in the lattice; the difference encodes the small errors 
 2. **Nearest-plane (Babai)**: project the target successively onto the Gram–Schmidt vectors, rounding the coefficients.  
 3. Read $\alpha$ from the last coordinate of the resulting lattice vector and reduce $\bmod p$.
 
-Because the matrix is only $36\times36$ and entirely integral, the whole LLL+Babai step takes $\ll1\,$ms on a modern laptop.
+Because the matrix is only $36\times36$ and entirely integral, the whole LLL+Babai step takes $\ll1$s on a modern laptop.
 
 ---
 
